@@ -35,17 +35,18 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
-app.use(session({
-    store: redisStore,
-    secret: SESSION_SECRET,
-    cookie: {
-        secure: false,
-        resave: false,
-        saveUninitialized: false,
-        httpOnly: true,
-        maxAge: 3000000
-    }
-}))
+// app.use(session({
+//     store: redisStore,
+//     secret: SESSION_SECRET,
+//     cookie: {
+//         secure: false,
+//         resave: false,
+//         saveUninitialized: false,
+//         httpOnly: true,
+//         maxAge: 60000,
+//         expires: 60000
+//     }
+// }))
 
 
 app.use(express.json());
