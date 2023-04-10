@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const session = require('express-session');
 const RedisStore = require('connect-redis').default;
 const redis = require('redis');
@@ -36,6 +37,7 @@ const connectWithRetry = () => {
 connectWithRetry();
 
 app.enable("trust proxy");
+app.use(cors({}));
 
 // app.use(session({
 //     store: redisStore,
