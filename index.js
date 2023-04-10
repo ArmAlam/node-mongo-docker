@@ -35,6 +35,8 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
+app.enable("trust proxy");
+
 // app.use(session({
 //     store: redisStore,
 //     secret: SESSION_SECRET,
@@ -51,8 +53,9 @@ connectWithRetry();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/api/v1/', (req, res) => {
     res.send('<h2>dfsdfs</h2>');
+    console.log('running');
 })
 
 app.use("/api/v1/posts", postRouter)
